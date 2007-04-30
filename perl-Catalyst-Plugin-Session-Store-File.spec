@@ -1,7 +1,7 @@
 %define realname Catalyst-Plugin-Session-Store-File
 %define name	perl-%{realname}
-%define version	0.07
-%define release	%mkrel 2
+%define version	0.10
+%define release	%mkrel 1
 
 Summary:	File storage backend for session data
 Name:		%{name}
@@ -45,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc Changes
+%doc CHANGES README
 %{perl_vendorlib}/Catalyst
 %{_mandir}/*/*
 
