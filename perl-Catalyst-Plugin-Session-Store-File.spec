@@ -1,7 +1,7 @@
 %define realname Catalyst-Plugin-Session-Store-File
 %define name	perl-%{realname}
 %define version	0.10
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Summary:	File storage backend for session data
 Name:		%{name}
