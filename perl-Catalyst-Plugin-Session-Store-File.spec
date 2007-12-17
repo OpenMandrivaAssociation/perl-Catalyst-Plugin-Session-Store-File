@@ -22,7 +22,6 @@ BuildRequires:	perl(Catalyst::Plugin::Session) >= 0.01
 BuildRequires:	perl(Class::Accessor::Fast) >= 0.22
 BuildRequires:	perl(Class::Data::Inheritable) >= 0.04
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 Catalyst::Plugin::Session::Store::File is an easy to use storage plugin for
