@@ -1,7 +1,7 @@
 %define realname Catalyst-Plugin-Session-Store-File
 %define name	perl-%{realname}
-%define version	0.10
-%define release	%mkrel 2
+%define version	0.13
+%define release	%mkrel 1
 
 Summary:	File storage backend for session data
 Name:		%{name}
@@ -22,7 +22,7 @@ BuildRequires:	perl(Catalyst::Plugin::Session) >= 0.01
 BuildRequires:	perl(Class::Accessor::Fast) >= 0.22
 BuildRequires:	perl(Class::Data::Inheritable) >= 0.04
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Catalyst::Plugin::Session::Store::File is an easy to use storage plugin for
@@ -40,15 +40,15 @@ It is based on Cache::FileCache.
 %__make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
+
+%clean
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc CHANGES README
+%doc Changes README
 %{perl_vendorlib}/Catalyst
 %{_mandir}/*/*
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
