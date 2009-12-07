@@ -1,21 +1,14 @@
-%define realname Catalyst-Plugin-Session-Store-File
-%define name	perl-%{realname}
-%define version	0.16
-%define release	%mkrel 1
+%define upstream_name    Catalyst-Plugin-Session-Store-File
+%define upstream_version 0.16
 
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Summary:	File storage backend for session data
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{realname}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{realname}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%else
-BuildRequires:	perl
-%endif
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Nagios/%{upstream_name}-%{upstream_version}.tar.bz2
 BuildRequires:	perl(Cache::Cache) >= 1.02
 BuildRequires:	perl(Catalyst) >= 5
 BuildRequires:	perl(Catalyst::Plugin::Session) >= 0.01
@@ -30,7 +23,7 @@ Catalyst that uses an simple file to act as a shared memory interprocess cache.
 It is based on Cache::FileCache.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
